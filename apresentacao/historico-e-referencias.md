@@ -63,6 +63,8 @@ Sayward (1978):
 
 As principais referências, em formato ABNT (NBR 6023) e ordem alfabética.
 
+### Livro e artigos
+
 AMMANN, Paul; OFFUTT, Jeff. **Introduction to software testing**. 2. ed.
 Cambridge: Cambridge University Press, 2016. ISBN 978-1-107-17201-2.
 
@@ -94,6 +96,8 @@ for Java. In: INTERNATIONAL SYMPOSIUM ON SOFTWARE RELIABILITY ENGINEERING
 MA, Yu-Seung; OFFUTT, Jeff; KWON, Yong-Rae. MuJava: an automated class
 mutation system. **Software Testing, Verification and Reliability**, v. 15,
 n. 2, p. 97-133, jun. 2005.
+
+### Sites das ferramentas
 
 JACOCO. **JaCoCo: Java Code Coverage Library**. Disponível em:
 https://www.jacoco.org/jacoco/. Acesso em: 14 nov. 2026.
