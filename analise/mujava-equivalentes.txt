@@ -1,0 +1,30 @@
+# Mutantes equivalentes do muJava (saem do denominador do mutation score)
+#
+# Formato: classe:mutante  justificativa
+#
+# Os identificadores (OP_n) seguem a numeração do muJava, que depende do
+# código-fonte. Se o código mudar, confira os ids de novo em
+# target/mujava-reports/<suite>/mutantes.csv.
+#
+# JSD em constantes (static final com valor literal)
+# ---------------------------------------------------
+# Todas as constantes do módulo são constantes de tempo de compilação. O javac
+# copia o valor delas direto no bytecode de quem as usa (instrução ldc), tanto
+# no código de produção quanto nos testes, e nunca lê o campo (nenhum
+# getstatic, conferido com javap). Sem o static, o campo vira "final" de
+# instância com o mesmo valor literal e continua sendo inlinado. Nenhum
+# comportamento observável muda, então não existe teste que mate o mutante.
+
+frete.Calculadora:JSD_1         DISTANCIA_LOCAL deixa de ser static; constante inlinada, comportamento identico
+frete.Frete:JSD_1               TAXA_MINIMA deixa de ser static; constante inlinada, comportamento identico
+frete.Frete:JSD_2               PRECO_POR_KG deixa de ser static; constante inlinada, comportamento identico
+frete.Frete:JSD_3               PRECO_POR_KM deixa de ser static; constante inlinada, comportamento identico
+frete.Frete:JSD_4               PRAZO_BASE_DIAS deixa de ser static; constante inlinada, comportamento identico
+frete.Frete:JSD_5               KM_POR_DIA deixa de ser static; constante inlinada, comportamento identico
+frete.FreteEconomico:JSD_1      DESCONTO deixa de ser static; constante inlinada, comportamento identico
+frete.FreteEconomico:JSD_2      DIAS_EXTRAS deixa de ser static; constante inlinada, comportamento identico
+frete.FreteExpresso:JSD_1       PRECO_POR_KG_EXPRESSO deixa de ser static; constante inlinada, comportamento identico
+frete.FreteExpresso:JSD_2       ADICIONAL_URGENCIA deixa de ser static; constante inlinada, comportamento identico
+frete.FreteExpresso:JSD_3       PRAZO_EXPRESSO_DIAS deixa de ser static; constante inlinada, comportamento identico
+frete.FreteInternacional:JSD_1  TAXA_ALFANDEGARIA deixa de ser static; constante inlinada, comportamento identico
+frete.FreteInternacional:JSD_2  DIAS_ALFANDEGA deixa de ser static; constante inlinada, comportamento identico

@@ -1,0 +1,25 @@
+# Mutantes de classe criados manualmente
+#
+# Cobrem operadores do roteiro que o muJava não gera para este código:
+#   ISD  o muJava só remove "super." de acesso a atributo, não de chamada de método
+#   EOC  o muJava só troca == por equals(); a direção equals() -> == não está implementada
+#
+# O IOP (mudar a posição da chamada a super) não se aplica: nenhum método
+# sobrescrito chama super como instrução isolada nem tem efeito colateral, então
+# mover a chamada ou não compila ou não muda nada.
+#
+# Formato: classe | operador | trecho original | trecho mutado
+# O trecho original precisa aparecer exatamente uma vez no arquivo-fonte atual.
+# Os mutantes são aplicados sobre o código atual a cada execução, então não
+# ficam desatualizados quando o código muda.
+
+# ISD: a chamada ao método da classe pai vira uma chamada ao próprio método.
+frete.FreteEconomico | ISD | return super.calcular() * (1 - DESCONTO); | return calcular() * (1 - DESCONTO);
+frete.FreteEconomico | ISD | return super.prazoEmDias() + DIAS_EXTRAS; | return prazoEmDias() + DIAS_EXTRAS;
+frete.FreteInternacional | ISD | double valorBase = super.calcular(); | double valorBase = calcular();
+frete.FreteInternacional | ISD | return super.prazoEmDias() + DIAS_ALFANDEGA; | return prazoEmDias() + DIAS_ALFANDEGA;
+
+# EOC: comparação de conteúdo (equals) trocada por comparação de referência (==).
+frete.Rastreio | EOC | this.codigo.equals(outro.codigo) | this.codigo == outro.codigo
+frete.Calculadora | EOC | if ("economico".equals(modalidade)) { | if ("economico" == modalidade) {
+frete.Calculadora | EOC | if ("expresso".equals(modalidade)) { | if ("expresso" == modalidade) {

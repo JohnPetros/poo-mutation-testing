@@ -1,0 +1,7 @@
+target/
+# muJava baixado pelo scripts/mujava.sh
+tools/mujava/repo/
+*.class
+.idea/
+*.iml
+.vscode/
