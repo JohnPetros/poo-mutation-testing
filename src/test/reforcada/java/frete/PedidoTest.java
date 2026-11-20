@@ -50,7 +50,6 @@ public class PedidoTest {
         Frete freteAna = new FreteExpresso(10, 100);
         Pedido ana = new Pedido("Ana", 200, freteAna);
         new Pedido("Bruno", 50, new Frete(1, 1));
-
         assertEquals("Ana", ana.getCliente());
         assertEquals(200.0, ana.getValorProdutos(), DELTA);
         assertSame(freteAna, ana.getFrete());
